@@ -1,30 +1,24 @@
 package com.cybersilicon.jetapp.screens
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.*
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import kotlin.random.Random
+
 
 @Composable
 fun ExploreScreen() {
-    Column(modifier = Modifier.fillMaxSize().background(Color(0xFFF5F5F5))) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .background(Color(0xFFF5F5F5))) {
         // Carte interactive
         Box(modifier = Modifier
             .fillMaxWidth()
@@ -62,7 +56,7 @@ fun ExploreScreen() {
         )
 
         // Liste d'événements recommandés (affichage vertical)
-        Column(modifier = Modifier.verticalScroll(lrememberScrollState())) {
+        Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
             EventCard(title = "Festival au Japon", date = "5 Dec", popularity = "New")
             EventCard(title = "Exposition à Berlin", date = "30 Nov", popularity = "Popular")
             // Ajouter plus de recommandations ici
