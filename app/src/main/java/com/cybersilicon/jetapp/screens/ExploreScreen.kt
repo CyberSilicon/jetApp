@@ -30,31 +30,32 @@ fun ExploreScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Section Exploration Hors Région
+        // Section Exploration Hors Périmetres
         Text(
-            text = "Événements à l'étranger",
+            text = "UpComming France Events!",
             fontSize = MaterialTheme.typography.titleLarge.fontSize,
             fontWeight = FontWeight.Bold,
+            color = Color.Black,
             modifier = Modifier.padding(start = 16.dp)
         )
 
         // Liste horizontale des événements
         Row(modifier = Modifier.horizontalScroll(rememberScrollState())) {
-            EventCard(title = "Concert en France", date = "21 Oct", popularity = "Hot!")
-            EventCard(title = "Conférence Tech aux USA", date = "15 Nov", popularity = "Trending")
+            EventCard(title = "Concert a Nancy", date = "21 Oct", popularity = "Hot!")
+            EventCard(title = "Conférence Tech à Paris", date = "15 Nov", popularity = "Trending")
+            EventCard(title = "Cérémonie de Noel", date = "15 Nov", popularity = "Trending")
             // Ajouter plus d'événements ici
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-
         // Section suggestions
         Text(
             text = "Recommandés pour vous",
             fontSize = MaterialTheme.typography.titleLarge.fontSize,
             fontWeight = FontWeight.Bold,
+            color = Color.Red,
             modifier = Modifier.padding(start = 16.dp)
         )
-
         // Liste d'événements recommandés (affichage vertical)
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
             EventCard(title = "Festival au Japon", date = "5 Dec", popularity = "New")
