@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomNavigation
@@ -57,9 +58,9 @@ fun MainScreen() {
 @Composable
 fun BottomBar(navController: NavHostController) {
     val screens = listOf(
-        BottomBarScreen.Home,
-        BottomBarScreen.Map,
+        //BottomBarScreen.Explore,
         BottomBarScreen.Chat,
+        BottomBarScreen.Map,
         BottomBarScreen.Profile
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -103,13 +104,8 @@ fun RowScope.AddItem(
 //            )},
         icon = {
             Icon(
-                modifier = Modifier.padding(20.dp),
-                imageVector = if (currentDestination?.route == screen.route
-                ) {
-                    screen.selectedIcon
-                } else {
-                    screen.selectedIcon
-                },
+                modifier = Modifier.padding(20.dp).size(28.dp),
+                imageVector = screen.icon,
                 contentDescription = "Navigation Icon",
                 tint = if (currentDestination?.route == screen.route) {
                     Color.White
